@@ -32,9 +32,13 @@ const parser = port.pipe(
 
 let data = {};
 
-parser.on("data", (sensData) => {
-  data = sensData;
-  console.log(type(sensData));
+parser.on("data", (sensDat) => {
+  try {
+    data = JSON.parse(sensDat);
+    console.log({ data });
+  } catch (e) {
+    console.log("Error :", e);
+  }
 });
 
 app.get("/", (req, res) => {

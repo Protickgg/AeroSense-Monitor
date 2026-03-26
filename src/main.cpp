@@ -65,7 +65,6 @@ void loop() {
   lcd.print(t);
   lcd.print(" C");
 
-  // Data to export: t (temp.), gasValue (gas quality) and distance (dist. from an obj.) 
   Serial.println(t);
   Serial.println(distance);
   Serial.println(gasValue);
