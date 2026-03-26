@@ -3,9 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" />
     <title>IOT-1</title>
   </head>
   <body>
-    <h1><%= data %></h1>
+    <h1>AIR Reconnaissance</h1>
+    <h3>AIR QUALITY INDEX: <%= data.gas %></h3>
+    <h3>DISTANCE: <%= data.dist %></h3>
+    <h3>TEMPERATURE: <%= data.temp %></h3>
   </body>
 </html>

@@ -65,7 +65,14 @@ void loop() {
   lcd.print(t);
   lcd.print(" C");
 
-  Serial.println(t);
-  Serial.println(distance);
-  Serial.println(gasValue);
+  // SERIAL OUTPUT
+
+  Serial.print("{");              
+  Serial.print("\"temp\":");        
+  Serial.print(t);                   
+  Serial.print(",\"dist\":");        
+  Serial.print(distance);
+  Serial.print(",\"gas\":");         
+  Serial.print(gasValue);
+  Serial.println("}");               
 } 

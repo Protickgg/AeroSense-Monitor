@@ -35,7 +35,6 @@ let data = {};
 parser.on("data", (sensDat) => {
   try {
     data = JSON.parse(sensDat);
-    console.log({ data });
   } catch (e) {
     console.log("Error :", e);
   }
