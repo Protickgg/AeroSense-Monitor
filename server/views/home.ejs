@@ -3,13 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="/index.css" />
     <title>IOT-1</title>
   </head>
   <body>
-    <h1>AIR Reconnaissance</h1>
-    <h3>AIR QUALITY INDEX: <%= data.gas %></h3>
-    <h3>DISTANCE: <%= data.dist %></h3>
-    <h3>TEMPERATURE: <%= data.temp %></h3>
+    <main>
+      <section class="hero">
+        <div class="heading">
+          <h1>AeroSense Monitor</h1>
+          <p>KNOW YOUR SURROUNDINGS</p>
+        </div>
+      </section>
+
+      <section class="data">
+        <h2>Your Surroundings</h2>
+        <span class="cards">
+          <div class="card">
+            <h3>Temperature</h3>
+            <div class="cardData">
+              <h4><%= data.temp %> &#176; C</h4>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Relative Humidity</h3>
+            <div class="cardData">
+              <h4><%= data.humidity %> %</h4>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Relative Air Quality</h3>
+            <div class="cardData">
+              <h4><%= data.gas %></h4>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Distance from the Object</h3>
+            <div class="cardData">
+              <h4><%= data.dist %> cm</h4>
+              <p></p>
+            </div>
+          </div>
+        </span>
+      </section>
+    </main>
+
+    <script src="chart.js"></script>
   </body>
 </html>

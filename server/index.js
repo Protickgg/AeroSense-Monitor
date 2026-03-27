@@ -8,6 +8,8 @@ const { ReadlineParser } = require("@serialport/parser-readline");
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
 
+app.use(express.static("public"));
+
 const port = new SerialPort({
   path: "COM5",
   baudRate: 9600,
@@ -35,7 +37,6 @@ let data = {};
 parser.on("data", (sensDat) => {
   try {
     data = JSON.parse(sensDat);
-    console.log(data);
   } catch (e) {
     console.log("Error :", e);
   }
