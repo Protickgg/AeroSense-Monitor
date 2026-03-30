@@ -37,13 +37,18 @@ let data = {};
 parser.on("data", (sensDat) => {
   try {
     data = JSON.parse(sensDat);
+    console.log(data);
   } catch (e) {
     console.log("Error :", e);
   }
 });
 
 app.get("/", (req, res) => {
-  res.render("home", { data: data });
+  const randTemp = Math.floor(Math.random() * 40);
+  const randAQI = Math.floor(Math.random() * 310);
+  const randHumidity = Math.floor(Math.random() * 60);
+
+  res.render("home", { data, randTemp, randAQI, randHumidity });
 });
 
 app.listen(PORT, () => {

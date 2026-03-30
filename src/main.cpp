@@ -47,10 +47,10 @@ void loop() {
   gasValue = analogRead(gasSensor);
   lcd.setCursor(0, 0);
 
-  if (gasValue <= 600) {
+  if (gasValue <= 130) {
     lcd.print("Very Good AQ");
-  } else if (gasValue <= 900) {
-    lcd.print("Moderate AQ"); 
+  } else if (gasValue <= 300) {
+    lcd.print("Poor AQ"); 
   } else if (gasValue <= 1023) {
     lcd.print("Dangerous AQ");
   } else {
@@ -60,7 +60,8 @@ void loop() {
   // DHT SENSOR 
 
   float t = dht.readTemperature();
-  
+  float h = dht.readHumidity();
+
   lcd.setCursor(0, 1);
   lcd.print(t);
   lcd.print(" C");
@@ -69,7 +70,9 @@ void loop() {
 
   Serial.print("{");              
   Serial.print("\"temp\":");        
-  Serial.print(t);                   
+  Serial.print(t);            
+  Serial.print(",\"humidity\":");
+  Serial.print(h);       
   Serial.print(",\"dist\":");        
   Serial.print(distance);
   Serial.print(",\"gas\":");         

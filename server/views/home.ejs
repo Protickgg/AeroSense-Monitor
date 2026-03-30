@@ -3,56 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AeroSense &VerticalBar; Home</title>
     <link rel="stylesheet" href="/index.css" />
-    <title>IOT-1</title>
   </head>
   <body>
     <main>
+      <!-- HERO -->
       <section class="hero">
-        <div class="heading">
-          <h1>AeroSense Monitor</h1>
-          <p>KNOW YOUR SURROUNDINGS</p>
+        <div class="hero-heading">
+          <h1>Monitor your surroudning in real time with</h1>
+          <h1 id="hero-central-text">AeroSense Monitor</h1>
+          <div class="hero-headnig-sec-text">
+            <p>Beware of your surroundings like never before with AeroSense.</p>
+            <a href="#">MONITOR</a>
+          </div>
         </div>
       </section>
 
-      <section class="data">
+      <!-- DATA -->
+
+      <div class="data">
         <h2>Your Surroundings</h2>
         <span class="cards">
           <div class="card">
             <h3>Temperature</h3>
-            <div class="cardData">
-              <h4><%= data.temp %> &#176; C</h4>
-              <p></p>
+            <div class="card-data">
+              <%= data.temp %>
+              <p>...</p>
             </div>
           </div>
-
           <div class="card">
-            <h3>Relative Humidity</h3>
-            <div class="cardData">
-              <h4><%= data.humidity %> %</h4>
-              <p></p>
+            <h3>Humidity</h3>
+            <div class="card-data">
+              <%= data.humidity %>
+              <p>...</p>
             </div>
           </div>
-
           <div class="card">
-            <h3>Relative Air Quality</h3>
-            <div class="cardData">
-              <h4><%= data.gas %></h4>
-              <p></p>
+            <h3>AQI</h3>
+            <div class="card-data">
+              <%= data.gas %>
+              <p>...</p>
             </div>
           </div>
-
           <div class="card">
-            <h3>Distance from the Object</h3>
-            <div class="cardData">
-              <h4><%= data.dist %> cm</h4>
-              <p></p>
+            <h3>Distance</h3>
+            <div class="card-data">
+              <%= data.dist %>
+              <p>...</p>
             </div>
           </div>
-        </span>
-      </section>
+      </div>
     </main>
-
-    <script src="chart.js"></script>
   </body>
 </html>
